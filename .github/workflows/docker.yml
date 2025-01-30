@@ -54,12 +54,12 @@ jobs:
               with:
                   context: .
                   platforms: ${{ matrix.architecture }}
-                  cache-from: type=local,src=/tmp/.buildx-cache/${{ matrix.architecture }}
-                  cache-to: type=local,dest=/tmp/.buildx-cache-new/${{ matrix.architecture }},mode=max
-            - name: Move cache
-              run: |
-                  rm -rf /tmp/.buildx-cache/${{ matrix.architecture }}
-                  mv /tmp/.buildx-cache-new/${{ matrix.architecture }} /tmp/.buildx-cache/${{ matrix.architecture }}
+            #       cache-from: type=local,src=/tmp/.buildx-cache/${{ matrix.architecture }}
+            #       cache-to: type=local,dest=/tmp/.buildx-cache-new/${{ matrix.architecture }},mode=max
+            # - name: Move cache
+            #   run: |
+            #       rm -rf /tmp/.buildx-cache/${{ matrix.architecture }}
+            #       mv /tmp/.buildx-cache-new/${{ matrix.architecture }} /tmp/.buildx-cache/${{ matrix.architecture }}
 
     publish:
         needs: [test]
