@@ -103,9 +103,9 @@ jobs:
                   platforms: linux/amd64
                   tags: ${{ steps.meta.outputs.tags }}
                   labels: ${{ steps.meta.outputs.labels }}
-                  cache-from: type=local,src=/tmp/.buildx-cache/linux/amd64
-                  cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-            - name: Move cache
-              run: |
-                  rm -rf /tmp/.buildx-cache
-                  mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+                  # cache-from: type=local,src=/tmp/.buildx-cache/linux/amd64
+                  # cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+            # - name: Move cache
+            #   run: |
+            #       rm -rf /tmp/.buildx-cache
+            #       mv /tmp/.buildx-cache-new /tmp/.buildx-cache
