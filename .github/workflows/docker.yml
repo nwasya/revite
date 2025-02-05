@@ -115,7 +115,7 @@ jobs:
         runs-on: ubuntu-latest
         env:
           CONFIG_BRANCH: aysan-dev
-          CLONE_DIR: /config
+          CLONE_DIR: $GITHUB_WORKSPACE/config
           CONFIG_FILE: /config/apps/pepchat/kustomization.yaml
         if: github.event_name != 'pull_request'
         steps:
