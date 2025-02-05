@@ -116,7 +116,7 @@ jobs:
         env:
           CONFIG_BRANCH: aysan-dev
           CLONE_DIR: $GITHUB_WORKSPACE/config
-          CONFIG_FILE: /config/apps/pepchat/kustomization.yaml
+          CONFIG_FILE: $CLONE_DIR/apps/pepchat/kustomization.yaml
         if: github.event_name != 'pull_request'
         steps:
             - name: Checkout Configuration Repository
